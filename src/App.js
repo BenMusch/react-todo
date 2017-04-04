@@ -3,16 +3,36 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super()
+    this.state = {
+      todos: [
+        { id: 1, name: 'Lean JSX', isComplete: true },
+        { id: 2, name: 'Learn Node', isComplete: false },
+        { id: 3, name: 'Hack the mainframe', isComplete: false }
+      ]
+    }
+  }
   render() {
     return (
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>React Todos</h2>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <div className="Todo-App">
+          <form>
+            <input type="text" />
+          </form>
+          <div className="Todo-List">
+            <ul>
+              {this.state.todos.map(todo =>
+                <li key={todo.id}>
+                  <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
+                </li>)}
+            </ul>
+          </div>
+        </div>
       </div>
     );
   }
