@@ -42,7 +42,7 @@ class App extends Component {
   render() {
     const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit
     return (
-      <div className="App">
+      <div className="app">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>React Todos</h2>
