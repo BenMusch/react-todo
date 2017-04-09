@@ -26,3 +26,14 @@ export const createTodo = (todo) => {
     body: JSON.stringify(todo)
   }).then(response => response.json())
 }
+
+export const deleteTodo = (todo) => {
+  return fetch(`${baseUrl}/${todo.id}`, {
+    method: 'DELETE',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(todo)
+  }).then(response => response.json())
+}

@@ -19,31 +19,6 @@
       "id": 4,
       "name": "Setup fetch",
       "isComplete": false
-    },
-    {
-      "id": 25643,
-      "name": "test",
-      "isComplete": false
-    },
-    {
-      "id": 2070,
-      "name": "asdf",
-      "isComplete": true
-    },
-    {
-      "id": 92932,
-      "name": "test",
-      "isComplete": false
-    },
-    {
-      "id": 98563,
-      "name": "Add!",
-      "isComplete": false
-    },
-    {
-      "id": 53984,
-      "name": "aaa",
-      "isComplete": false
     }
   ]
 }
