@@ -32,7 +32,12 @@ class App extends Component {
       errorMessage: ''
     })
     createTodo(newTodo)
-      .then(() => console.log('todo added'))
+      .then(() => this.showTempMessage('Todo added!'))
+  }
+
+  showTempMessage = (msg) => {
+    this.setState({message: msg})
+    setTimeout(() => this.setState({message: ''}), 2500)
   }
 
   handleRemove = (id, event) => {
@@ -74,6 +79,7 @@ class App extends Component {
           <h2>React Todos</h2>
         </div>
         <div className="Todo-App">
+          {this.state.message && <span className='success'>{this.state.message}</span>}
           {this.state.errorMessage && <span className='error'>{this.state.errorMessage}</span>}
           <TodoForm handleInputChange={this.handleInputChange}
              currentTodo={this.state.currentTodo}
