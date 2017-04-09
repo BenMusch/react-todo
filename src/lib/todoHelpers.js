@@ -18,3 +18,14 @@ export const updateTodo = (list, updated) => {
 export const removeTodo = (id, list) => {
   return list.filter((item) => item.id !== id)
 }
+
+export const filterTodos = (list, path) => {
+  switch(path) {
+    case '/active':
+      return list.filter((item) => !item.isComplete)
+    case '/complete':
+      return list.filter((item) => item.isComplete)
+    default:
+      return list
+  }
+}
